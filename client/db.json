@@ -1,0 +1,73 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "first_name": "s",
+      "last_name": "s",
+      "email": "s",
+      "password": "asd",
+      "confirm_password": "asd"
+    },
+    {
+      "username": "Bashar Alhochan",
+      "password": "123Bashar*",
+      "id": 2
+    },
+    {
+      "first_name": "bashar",
+      "last_name": "alhochan",
+      "email": "bashar@gmail.com",
+      "password": "123Bashar*",
+      "confirm_password": "123Bashar*",
+      "id": 3
+    }
+  ],
+  "task": [
+    {
+      "id": 1,
+      "title": "",
+      "description": "",
+      "DueDate": "",
+      "Priority": ""
+    },
+    {
+      "title": "asdasdasd",
+      "description": "aksjkdansmd",
+      "dueDate": "2023-12-08",
+      "id": 2
+    },
+    {
+      "title": "asjvhdj,amnsd",
+      "description": "akjsvhbmn c",
+      "dueDate": "2023-11-08",
+      "id": 3
+    },
+    {
+      "title": "asdasdasd",
+      "description": "asdasdasd",
+      "dueDate": "2023-11-16",
+      "id": 4
+    },
+    {
+      "title": "asdasdasd",
+      "description": "asdasdas",
+      "dueDate": "2023-11-03",
+      "id": 5
+    },
+    {
+      "title": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "dueDate": "2023-11-09",
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "title": "hfgbdf",
+      "description": "aaadddsssss",
+      "dueDate": "2023-11-04",
+      "id": 8
+    }
+  ]
+}
