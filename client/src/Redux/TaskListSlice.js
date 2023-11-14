@@ -6,6 +6,8 @@ const initialState = {
   tasks: [],
   loading: false,
   error: null,
+  filter:'all',
+  search:'',
 };
 
 const taskSlice = createSlice({
@@ -35,12 +37,31 @@ const taskSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+    setFilter:(state, action)=> {
+      state.filter = action.payload;
+    },
+    setSearch:(state, action)=>{
+      state.search = action.payload;
+    },
+
   },
 });
 
-export const { addTask, updateTaskSuccess ,deleteTask, setTasks, setLoading, setError } = taskSlice.actions;
+export const { addTask, updateTaskSuccess , setTasks, setLoading, setError, setFilter,setSearch } = taskSlice.actions;
 
-// Async actions using Axios without thunk
+export const selectFilteredTasks = (state) =>{
+  const{tasks, filter, search} = state.task;
+  return tasks.filter ((task) =>{
+
+    const isStatusMatch = filter === 'all' || task.status === filter;
+    const isSearchMatch =  
+    task.title.toLowerCase().include(search.toLowerCase()) ||
+    task.description.toLowerCase().includes(search.toLowerCase());
+    return isStatusMatch && isSearchMatch;
+
+  } )
+};
+
 export const fetchTasks = () => async (dispatch) => {
   try {
     dispatch(setLoading());
@@ -66,13 +87,35 @@ export const postTask = (taskData) => async (dispatch) => {
 export const updateTask = ({id, updatedTask }) => async (dispatch) => {
   console.log("why",updatedTask);
   console.log("id",id)
-  try {
+  try { 
     dispatch(setLoading());
     const response = await axios.put(`http://localhost:3001/task/${id}`, updatedTask);
     dispatch(updateTaskSuccess(response.data));
   } catch (error) {
     console.error('Error updating task:', error);
     dispatch(setError(error.message || 'Error updating task'));
+  }
+};
+
+export const updateTaskStatus = ({ id, status }) => async (dispatch) => {
+  try {
+    dispatch(setLoading());
+    const response = await axios.put(`http://localhost:3001/task/${id}/status`, { status });
+    dispatch(updateTaskSuccess(response.data));
+  } catch (error) {
+    console.error('Error updating task status:', error);
+    dispatch(setError(error.message || 'Error updating task status'));
+  }
+};
+
+export const deleteTask = (id) => async (dispatch) => {
+  try {
+    dispatch(setLoading());
+    await axios.delete(`http://localhost:3001/task/${id}`);
+    dispatch({ type: 'task/deleteTask', payload: id });
+  } catch (error) {
+    console.error('Error deleting task:', error);
+    dispatch(setError(error.message || 'Error deleting task'));
   }
 };
 

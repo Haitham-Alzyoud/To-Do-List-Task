@@ -7,6 +7,9 @@ const initialState = {
   title: '',
   description: '',
   dueDate: '',
+  priority:'',
+  status:'',
+  id: '',
 };
 
 const taskFormSlice = createSlice({
@@ -15,7 +18,17 @@ const taskFormSlice = createSlice({
   reducers: {
     setField: (state, action) => {
       const { field, value } = action.payload;
-      state[field] = value;
+      switch (field) {
+        case 'title':
+        case 'description':
+        case 'dueDate':
+        case 'priority':
+        case 'status':
+          state[field] = value;
+          break;
+        default:
+          break;
+      }
     },
     clearFormFields: (state) => {
       return initialState;
