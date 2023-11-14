@@ -22,23 +22,21 @@
       "id": 3
     }
   ],
-
-  
-  "task": [
+  "tasks": [
     {
       "id": 1,
       "title": "Example Task",
       "description": "lblblblbl",
       "dueDate": "20/11/2023",
       "priority": "high",
-      "status": "pending"
+      "completed": false
     },
     {
       "title": "asdasdasd",
       "description": "aksjkdansmd",
       "dueDate": "2023-12-08",
       "priority": "high",
-      "status": "pending",
+      "completed": false,
       "id": 2
     },
     {
@@ -46,7 +44,7 @@
       "description": "akjsvhbmn cfffffffffffffffff",
       "dueDate": "2023-11-08",
       "priority": "high",
-      "status": "pending",
+      "completed": false,
       "id": 3
     },
     {
@@ -54,7 +52,7 @@
       "description": "asdasdasd",
       "dueDate": "2023-11-16",
       "priority": "high",
-      "status": "pending",
+      "completed": false,
       "id": 4
     },
     {
@@ -62,23 +60,15 @@
       "description": "asdasdas",
       "dueDate": "2023-11-03",
       "priority": "high",
-      "status": "pending",
+      "completed": false,
       "id": 5
-    },
-    {
-      "title": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "dueDate": "2023-11-09",
-      "priority": "high",
-      "status": "pending",
-      "id": 6
     },
     {
       "title": "why god .... why",
       "description": "bshsbshbshsbh",
       "dueDate": "2023-11-09",
       "priority": "high",
-      "status": "pending",
+      "completed": false,
       "id": 7
     },
     {
@@ -86,7 +76,7 @@
       "description": "mutaz",
       "dueDate": "2023-11-04",
       "priority": "high",
-      "status": "pending",
+      "completed": false,
       "id": 8
     },
     {
@@ -94,14 +84,14 @@
       "description": "ffffff",
       "dueDate": "2023-11-08",
       "priority": "high",
-      "status": "pending",
+      "completed": true,
       "id": 9
     },
     {
       "title": "haitham",
       "description": "brorororo",
       "dueDate": "2023-12-16",
-      "status": "pending",
+      "completed": false,
       "priority": "high",
       "id": 10
     }
