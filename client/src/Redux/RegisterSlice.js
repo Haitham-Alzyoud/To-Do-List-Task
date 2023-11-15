@@ -26,7 +26,8 @@ export const { registerSuccess, registerFailure } = registerSlice.actions;
 // Async action using Redux Thunk
 export const registerUser = (userData) => async (dispatch) => {
   try {
-    const response = await axios.post('http://localhost:3001/users', userData);
+    const { confirm_password, ...userDataToSend } = userData;
+    const response = await axios.post('http://localhost:3001/users', userDataToSend);
     dispatch(registerSuccess(response.data));
   } catch (error) {
     dispatch(registerFailure(error.response.data));

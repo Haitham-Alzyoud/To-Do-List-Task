@@ -20,6 +20,28 @@
       "password": "123Bashar*",
       "confirm_password": "123Bashar*",
       "id": 3
+    },
+    {
+      "first_name": "Wael",
+      "last_name": "Foad",
+      "email": "wael@gmail.com",
+      "password": "123Wael456*",
+      "confirm_password": "123Wael456*",
+      "id": 4
+    },
+    {
+      "first_name": "lolo",
+      "last_name": "wow",
+      "email": "wow@gmail.com",
+      "password": "Wow123*",
+      "id": 5
+    },
+    {
+      "first_name": "laith",
+      "last_name": "haitham",
+      "email": "laith22@gmail.com",
+      "password": "22Laith33*",
+      "id": 6
     }
   ],
   "tasks": [

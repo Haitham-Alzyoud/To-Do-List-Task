@@ -23,7 +23,10 @@ import { Link } from 'react-router-dom';
         Home
        </Link>
        
-       <Link to="/RegistrationPage" className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">
+       <Link to="/Login" className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">
+       Login
+       </Link>
+       <Link to="/SignupPage" className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">
        Signup
        </Link>
         

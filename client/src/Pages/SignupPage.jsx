@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { registerUser, selectRegisteredUser, selectRegistrationError } from "../Redux/RegisterSlice";  // Add these imports
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Register = () => {
     const dispatch = useDispatch();
@@ -13,7 +13,6 @@ const Register = () => {
     last_name: "",
     email: "",
     password: "",
-    confirm_password: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -56,10 +55,7 @@ const Register = () => {
       newErrors.password = "Password is required";
       isValid = false;
     }
-    if (!formData.confirm_password.trim()) {
-      newErrors.confirm_password = "Confirm Password  is required";
-      isValid = false;
-    }
+   
     if (formData.password !== formData.confirm_password) {
       newErrors.confirm_password = "Passwords do not match";
       isValid = false;
@@ -75,7 +71,7 @@ const Register = () => {
     if (validateForm()) {
         try{
             await dispatch(registerUser(formData));
-            navigate('/')
+            navigate('/Login')
         }catch(error){}
       
     }
@@ -190,7 +186,7 @@ const Register = () => {
           )}
         </div>
         <div className="col-span-2">
-
+            
           <button
             type="submit"
             className="bg-[#0F2355] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -198,6 +194,7 @@ const Register = () => {
           >
             Register
           </button>
+          
         </div>
       </form>
     </div>

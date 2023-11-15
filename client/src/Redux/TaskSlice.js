@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-
+axios.defaults.headers.common["Authorization"] = `${localStorage.getItem('token')}`
 export const fetchTasks = createAsyncThunk('tasks/fetchTasks', async () => {
   const response = await axios.get('http://localhost:3001/tasks');
 //   const response = await axios.get('http://localhost:5000/getAllTask');

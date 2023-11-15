@@ -30,8 +30,12 @@ export const { loginSuccess, loginFailure, logout } = loginSlice.actions;
 export const loginUser = (userData) => async (dispatch) => {
   try {
     const response = await axios.post('http://localhost:3001/login', userData);
+    localStorage.setItem("token", response.data);
     dispatch(loginSuccess(response.data));
   } catch (error) {
+    if(error.response.status === 400 && error.response.data.error === 'Email not founf'){
+      dispatch(loginFailure('Email not foound'))
+    }
     dispatch(loginFailure(error.response.data));
   }
 };
